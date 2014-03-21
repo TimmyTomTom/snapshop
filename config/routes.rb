@@ -1,4 +1,6 @@
 Snapshop::Application.routes.draw do
+  resources :products
+
   get "profiles/show"
   devise_for :users
 
