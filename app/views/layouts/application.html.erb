@@ -19,14 +19,6 @@
 	<div class="navbar-inner">
  	<div class="container">
  	<%= link_to "SnapShop", '#' , id: "logo" %>
- 	<nav>
- 	<ul class="nav navbar-nav">
- 	<li><a href="#">Ahoy</a> </li>
- 	<li><a href="#">What</a> </li>
- 	<li><a href="#">Hey </a> </li>
- 	<li><a href="#">ho  </a> </li>
- 	</ul>
- 	</nav>
  	<% if user_signed_in?%>
  	<ul class="nav navbar-nav pull-right"></ul>
  	<li><%= link_to current_user.full_name, edit_user_registration_path %></li>

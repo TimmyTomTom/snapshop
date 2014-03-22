@@ -1,17 +1,26 @@
  
 <div class="container">
   <div class="row">
-        <div class="col-md-4 pull-left">
- <img src="http://lorempixel.com/640/640" />
+        <div class="col-lg-6 pull-left">
+ <img class="well" src="http://lorempixel.com/640/640" />
    </div>
-   <div class="col-md-4 pull-right">
+   <div class="col-lg-3 well pull-right">
     	<h1><%= @product.title %></h1>
 
   <p><%= @product.description %></p>
 
   <b><h2>$<%=@product.price %></h2></b>
+  
 
-  <button type="Submit" class="btn btn-default">Buy Now</button></div></div><br />
+<div class="col-lg-2">
+  <button type="Submit" class="btn btn-default">Like</button>
+
+  <button type="Submit" class="btn btn-default">Buy Now</button><br />
+  </div>
+</br>
+  <b><em><a href="#"><%=@product.user.full_name %></a></em></b>
+
+  <h2>Comments</h2>
 
   <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
@@ -19,6 +28,6 @@
   		</div>
     </div>
 </div>
-</div>
+
 
 

@@ -1,5 +1,13 @@
-<div>
-	<h1><%= @user.full_name %></h1>
+<div class="page-header">
 
-
+<h1><%= @user.full_name %></h1>
 </div>
+
+	<% @products.each do |product| %>
+	  	<h2><%=product.title %></h2>
+
+ 	  	<p><%=product.description %></p>
+
+  		<b><h3>$<%=product.price %></h3></b>
+  		</hr>
+	<% end %>
