@@ -3,11 +3,18 @@
 <h1><%= @user.full_name %></h1>
 </div>
 
+<% if @products %>
+
 	<% @products.each do |product| %>
+	  <div class="well">
 	  	<h2><%=product.title %></h2>
 
  	  	<p><%=product.description %></p>
 
-  		<b><h3>$<%=product.price %></h3></b>
+  		<b>$<%=product.price %></b>
+  		</br>
   		</hr>
+  		<%= link_to time_ago_in_words(product.created_at), product_path(product) %> ago
+  		</div>
 	<% end %>
+<% end %>

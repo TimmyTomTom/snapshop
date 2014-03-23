@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
+    @product = current_user.products.new(product_params)
 
     respond_to do |format|
       if @product.save
@@ -40,6 +40,12 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    @product = current_user.products.find(params[:id])
+
+    if params[:product] && params[:product].has_key?(:user_id)
+     
+     params[:product].delete(:user_id) 
+    end
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
