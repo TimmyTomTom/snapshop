@@ -2,12 +2,12 @@
 <div class="container">
   <div class="row">
         <div class="col-lg-6 pull-left">
- <img class="well" src="http://lorempixel.com/640/640" />
    </div>
    <div class="col-lg-3 well pull-right">
     	<h1><%= @product.title %></h1>
+      <%= image_tag @product.image_url.to_s %>
 
-  <p><%= @product.description %></p>
+
 
   <b><h2>$<%=@product.price %></h2></b>
   

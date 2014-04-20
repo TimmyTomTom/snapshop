@@ -1,4 +1,13 @@
 Snapshop::Application.routes.draw do
+  
+  namespace :api, defaults: {format: 'json'} do
+    #/api/  API::
+    namespace :v1 do
+      resources :products
+    end
+  end
+
+
   resources :products
 
   get "profiles/show"
@@ -12,9 +21,11 @@ Snapshop::Application.routes.draw do
   
   resources :statuses
   get 'feed', to: 'statuses#index', as: :feed
-  root to: 'statuses#index'
+  root to: 'products#index'
 
-  get '/:id', to: 'profiles#show'
+  get '/:id', to: 'profiles#show', as: 'profile'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

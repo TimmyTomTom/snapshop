@@ -7,5 +7,7 @@ class CreateProducts < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_attachment :products, :attachment
+
   end
 end

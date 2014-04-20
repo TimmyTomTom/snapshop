@@ -2,6 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+require 'carrierwave'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 require 'devise'
@@ -22,6 +24,6 @@ module Snapshop
     # config.i18n.default_locale = :
      config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
      config.assets.initialize_on_precompile = false
-
+     
   end
 end

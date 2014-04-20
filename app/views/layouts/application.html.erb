@@ -18,16 +18,18 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
 	<div class="navbar-inner">
  	<div class="container">
- 	<%= link_to "SnapShop", '#' , id: "logo" %>
+ 	<%= link_to "SnapShop", root_path , id: "logo" %>
  	
  	<% if user_signed_in?%>
 
 
 	<div class="dropdown pull-right">
 
-		<button type ="button" class="btn btn-primary"><%= link_to current_user.full_name, "#" %></button>
-
-		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+	<ul class="nav navbar-nav">	
+		<li><%= link_to current_user.full_name, profile_path(current_user.profile_name) %>
+		</li>
+	</ul>
+		<button type="button" class="btn btn-nav dropdown-toggle" data-toggle="dropdown">
 			<span class ="caret"></span>
 			<span class="sr-only"> Toggle Dropdown</span>
 		</button>

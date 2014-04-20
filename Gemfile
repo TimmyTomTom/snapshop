@@ -6,11 +6,18 @@ ruby '2.0.0'
 gem 'rails', '4.0.3'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'paperclip'
+gem 'carrierwave'
+
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'devise'
+gem "grape"
+gem 'rspec'
 
+gem'simple_token_authentication'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -37,6 +44,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+	gem 'thin'
+end
+
+group :developmen, :test do
+	gem 'thin'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
